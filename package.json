@@ -4,9 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "npx nodemon src/server.ts --watch 'src/' -e ts",
+    "dev": "npx nodemon src/main/server.ts --watch 'src/' -e ts",
     "build": "npx tsc",
-    "start": "node ./dist/server.js",
+    "start": "node ./dist/main/server.js",
     "test": "jest --passWithNoTests",
     "prepare": "husky install"
   },
