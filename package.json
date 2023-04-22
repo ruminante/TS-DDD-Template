@@ -7,7 +7,7 @@
     "dev": "npx nodemon src/server.ts --watch 'src/' -e ts",
     "build": "npx tsc",
     "start": "node ./dist/server.js",
-    "test": "jest",
+    "test": "jest --passWithNoTests",
     "prepare": "husky install"
   },
   "keywords": [],
