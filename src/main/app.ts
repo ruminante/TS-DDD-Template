@@ -1,5 +1,5 @@
 import express from "express";
-import {endpoints} from "./routes";
+import { endpoints } from "./routes";
 import helmet from 'helmet'
 import cors from 'cors'
 import { ErrorHandler } from "./middleware/error.handler";
@@ -21,14 +21,14 @@ class App {
 
   private middleware() {
     // Check https://github.com/expressjs/morgan for more info
+    // Check https://github.com/expressjs/cors for more info
+    this.app.use(cors({ origin: '*' }));
     this.app.use(morgan('[:date] :method :url :status - :user-agent'));
     this.app.use(express.json());
-    this.app.use(endpoints);
     // Check https://github.com/helmetjs/helmet for more info
     this.app.use(helmet());
-    // Check https://github.com/expressjs/cors for more info
-    this.app.use(cors({origin: '*'}));
     this.app.use(ErrorHandler)
+    this.app.use(endpoints);
     // Add more middlewares as needed here
   }
 }
